@@ -1,0 +1,33 @@
++ [gdb Debugging Full Example (Tutorial): ncurses](http://www.brendangregg.com/blog/2016-08-09/gdb-example-ncurses.html)
++ [debugging with gdb](http://sourceware.org/gdb/current/onlinedocs/gdb/)
+  - [A Sample gdb Session](https://sourceware.org/gdb/current/onlinedocs/gdb/Sample-Session.html#Sample-Session)
+    - start 
+      - `gdb program` 
+      - `set args parameters` 
+      - `r`
+      - `gdb program core_dump`
+      - `gdb -p processid`
+    - navigator
+      - `info threads` show threads
+      - `t i` switch to thread
+      - `f i` switch to frame
+      - `info args` show arguments
+    - break and step into
+      - `break functionname`
+      - `n`(next, F10 for visualstudio)
+      - `s`(next.step, F11 for visualstudio)
+      - `bt`(summary of the stack)
+        - `f i` : goto the stack frame at i level
+      - `p(print) variable`
+      - `l`(list ten lines of source surrrouding the current line)
+      - `c`(continue, F5 for visualstudio)
+    - end
+      - `Ctrl+d` : giving it an EOF as input to interrupt program
+      - `quit` : exit gdb
+  - [gdb with lua](https://github.com/mkottman/lua-gdb-helper)
+    - `wget https://github.com/mkottman/lua-gdb-helper/blob/master/luagdb.txt`
+    - gdb to find the lua runtime thread
+    - `source luagdb.txt`
+    - `luatrace`
++ coredump
+  - `cat /proc/sys/kernel/core_pattern`
